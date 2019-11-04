@@ -13,10 +13,10 @@ import patchApplication from './methods/patch-application'
 const EcomApps = function (sessionKey) {
   const self = this
   this.ecomAuth = new EcomAuth(sessionKey)
-  this.fetch = (meta = {}) => fetchApplications(meta)
-  this.find = appId => findApplications(appId)
-  this.install = appId => installApplication(self, appId)
-  this.remove = _id => removeApplication(self, _id)
+  this.fetchApps = (meta = {}) => fetchApplications(meta)
+  this.findApp = appId => findApplications(appId)
+  this.installApp = appId => installApplication(self, appId)
+  this.removeApp = _id => removeApplication(self, _id)
   this.editApp = (_id, body) => patchApplication(self, _id, body)
 }
 
