@@ -9,6 +9,7 @@ import findApplications from './methods/find-applications'
 import installApplication from './methods/install-application'
 import removeApplication from './methods/remove-application'
 import patchApplication from './methods/patch-application'
+import popupOauthLink from './methods/popup-oauth'
 
 const EcomApps = function (sessionKey) {
   const self = this
@@ -18,6 +19,7 @@ const EcomApps = function (sessionKey) {
   this.installApp = appId => installApplication(self, appId)
   this.removeApp = _id => removeApplication(self, _id)
   this.editApp = (_id, body) => patchApplication(self, _id, body)
+  this.popupOauthLink = url => popupOauthLink(url)
 }
 
 export default EcomApps
