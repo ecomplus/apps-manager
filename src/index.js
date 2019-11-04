@@ -17,7 +17,7 @@ const EcomApps = function (sessionKey) {
   this.find = appId => findApplications(appId)
   this.install = appId => installApplication(self, appId)
   this.remove = _id => removeApplication(self, _id)
-  this.patch = (_id, { data, hiddenData }) => patchApplication(self, _id, { data, hiddenData })
+  this.editApp = (_id, body) => patchApplication(self, _id, body)
 }
 
 export default EcomApps
