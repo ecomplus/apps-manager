@@ -23,7 +23,7 @@ export default (self, appId, redirect = false) => {
         if (redirect && app.redirect_uri && app.redirect_uri !== null) {
           const auth = ecomAuth.getSession()
           const url = `${app.redirect_uri}?x_store_id=${auth.store_id}`
-          self.popupOauthLink(url)
+          createPopup(url, `Authentication ${app.title}`)
         }
 
         return {
@@ -32,4 +32,32 @@ export default (self, appId, redirect = false) => {
         }
       })
   })
+}
+
+const createPopup = (url, title) => {
+  if (typeof window !== 'object') {
+    throw new Error('Method available for browser only')
+  }
+
+  const { screen } = window
+  let width
+  if (screen) {
+    // set window width based on screen width
+    if (screen.width >= 640) {
+      width = 900
+    } else {
+      width = screen.width
+    }
+  } else {
+    width = 380
+  }
+
+  // open new browser window
+  const popup = window.open(url, title, `height=500,width=${width}`)
+  if (popup) {
+    if (typeof window === 'object' && window.focus) {
+      popup.focus()
+    }
+  }
+  return popup
 }
