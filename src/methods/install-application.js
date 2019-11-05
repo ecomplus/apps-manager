@@ -5,7 +5,7 @@ export default (self, appId, redirect = false) => {
 
   return findApp(appId).then(app => {
     appProps.forEach(prop => {
-      if (app[prop] && app[prop] !== null) {
+      if (app[prop]) {
         body[prop] = app[prop]
       }
     })
@@ -20,7 +20,7 @@ export default (self, appId, redirect = false) => {
       .requestApi('/applications.json', 'post', body)
       .then(resp => {
         // redirect to oauth
-        if (redirect && app.redirect_uri && app.redirect_uri !== null) {
+        if (redirect && app.redirect_uri) {
           const auth = ecomAuth.getSession()
           const url = `${app.redirect_uri}?x_store_id=${auth.store_id}`
           createPopup(url, `Authentication ${app.title}`)
@@ -39,21 +39,8 @@ const createPopup = (url, title) => {
     throw new Error('Method available for browser only')
   }
 
-  const { screen } = window
-  let width
-  if (screen) {
-    // set window width based on screen width
-    if (screen.width >= 640) {
-      width = 900
-    } else {
-      width = screen.width
-    }
-  } else {
-    width = 380
-  }
-
   // open new browser window
-  const popup = window.open(url, title, `height=500,width=${width}`)
+  const popup = window.open(url, title)
   if (popup) {
     if (typeof window === 'object' && window.focus) {
       popup.focus()
