@@ -56,6 +56,11 @@ module.exports = devMode
         filename: output.filename.replace('.min.js', '.root.min.js')
       },
       externals: {
+        axios: {
+          commonjs: 'axios',
+          commonjs2: 'axios',
+          root: 'axios'
+        },
         '@ecomplus/utils': {
           commonjs: '@ecomplus/utils',
           commonjs2: '@ecomplus/utils',
