@@ -2,18 +2,30 @@ export default (self, _id, body) => {
   const method = 'patch'
   const promises = []
   const { ecomAuth } = self
-  const { data, hidden_data } = body
+  let data = null
+  let hiddenData = null
+  for (const key in body) {
+    if (key === 'data') {
+      data = body[key]
+      delete body[key]
+    }
+
+    if (key === 'hidden_data') {
+      hiddenData = body[key]
+      delete body[key]
+    }
+  }
 
   if (data && typeof data === 'object') {
-    promises.push(ecomAuth.apiRequest(`/applications/${_id}/data.json`, method, data))
+    promises.push(ecomAuth.requestApi(`/applications/${_id}/data.json`, method, data))
   }
 
-  if (hidden_data && typeof hidden_data === 'object') {
-    promises.push(ecomAuth.apiRequest(`/applications/${_id}/hidden_data.json`, method, hidden_data))
+  if (hiddenData && typeof hiddenData === 'object') {
+    promises.push(ecomAuth.requestApi(`/applications/${_id}/hidden_data.json`, method, hiddenData))
   }
 
-  if (!data && !hidden_data && body) {
-    promises.push(ecomAuth.apiRequest(`/applications/${_id}.json`, method, body))
+  if (!data && !hiddenData && body) {
+    promises.push(ecomAuth.requestApi(`/applications/${_id}.json`, method, body))
   }
 
   return Promise.all(promises)
