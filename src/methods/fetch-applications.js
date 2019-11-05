@@ -1,5 +1,4 @@
 import request from '../lib/market-requests'
-import querystring from 'querystring'
 
 export default (query) => {
   const { params, limit, offset, fields } = query
@@ -14,7 +13,7 @@ export default (query) => {
   }
 
   if (params) {
-    url += `&${querystring.stringify(params)}`
+    url += Object.keys(params).map(key => key + '=' + params[key]).join('&')
   }
 
   if (fields && Array.isArray(fields) && fields.length) {
