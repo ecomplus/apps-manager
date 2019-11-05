@@ -4,20 +4,20 @@
  * @license AGPL-3.0
  */
 import EcomAuth from '@ecomplus/auth'
-import fetchApplications from './methods/fetch-applications'
-import findApplications from './methods/find-applications'
-import installApplication from './methods/install-application'
+import fetchApps from './methods/fetch-apps'
+import findApp from './methods/find-app'
+import installApp from './methods/install-app'
 import removeApplication from './methods/remove-application'
-import patchApplication from './methods/patch-application'
+import editApplication from './methods/edit-application'
 
 const EcomApps = function (sessionKey) {
   const self = this
   this.ecomAuth = new EcomAuth(sessionKey)
-  this.fetchApps = (meta = {}) => fetchApplications(meta)
-  this.findApp = appId => findApplications(appId)
-  this.installApp = (appId, redirect) => installApplication(self, appId, redirect)
-  this.removeApp = _id => removeApplication(self, _id)
-  this.editApp = (_id, body) => patchApplication(self, _id, body)
+  this.fetchApps = (meta = {}) => fetchApps(meta)
+  this.findApp = appId => findApp(appId)
+  this.installApp = (appId, redirect) => installApp(self, appId, redirect)
+  this.removeApplication = _id => removeApplication(self, _id)
+  this.editApplication = (_id, body) => editApplication(self, _id, body)
 }
 
 export default EcomApps
