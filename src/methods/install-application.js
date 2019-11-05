@@ -26,7 +26,10 @@ export default (self, appId) => {
           self.popupOauthLink(url)
         }
 
-        return resp.data
+        return {
+           app,
+           result: resp.data
+        }
       })
   })
 }
