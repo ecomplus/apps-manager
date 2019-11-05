@@ -24,7 +24,7 @@ export default (self, _id, body) => {
     promises.push(ecomAuth.requestApi(`/applications/${_id}/hidden_data.json`, method, hiddenData))
   }
 
-  if (body) {
+  if (!Object.keys(body).length) {
     promises.push(ecomAuth.requestApi(`/applications/${_id}.json`, method, body))
   }
 
