@@ -2,6 +2,7 @@
 
 const devMode = process.env.NODE_ENV !== 'production'
 const path = require('path')
+const { dependencies } = require('./package.json')
 
 // preset default output object
 const output = {
@@ -37,7 +38,9 @@ const config = {
     colors: true
   },
   devtool: 'source-map',
-  externals: devMode ? '' : /^(@babel\/runtime|core-js|@ecomplus\/(utils|client)|eventemitter3)/
+  externals: devMode ? ''
+    // exclude all pkg dependencies on production by default
+    : new RegExp('^(' + Object.entries(dependencies).map(([pkg]) => pkg).join('|') + ')(/|$)', 'i')
 }
 
 module.exports = devMode
@@ -53,11 +56,6 @@ module.exports = devMode
         filename: output.filename.replace('.min.js', '.root.min.js')
       },
       externals: {
-        eventemitter3: {
-          commonjs: 'eventemitter3',
-          commonjs2: 'eventemitter3',
-          root: 'EventEmitter'
-        },
         '@ecomplus/utils': {
           commonjs: '@ecomplus/utils',
           commonjs2: '@ecomplus/utils',
@@ -67,6 +65,11 @@ module.exports = devMode
           commonjs: '@ecomplus/client',
           commonjs2: '@ecomplus/client',
           root: 'ecomClient'
+        },
+        '@ecomplus/auth': {
+          commonjs: '@ecomplus/auth',
+          commonjs2: '@ecomplus/auth',
+          root: 'EcomAuth'
         }
       }
     }
