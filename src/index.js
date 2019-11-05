@@ -16,7 +16,7 @@ const EcomApps = function (sessionKey) {
   this.ecomAuth = new EcomAuth(sessionKey)
   this.fetchApps = (meta = {}) => fetchApplications(meta)
   this.findApp = appId => findApplications(appId)
-  this.installApp = appId => installApplication(self, appId)
+  this.installApp = (appId, redirect) => installApplication(self, appId, redirect)
   this.removeApp = _id => removeApplication(self, _id)
   this.editApp = (_id, body) => patchApplication(self, _id, body)
   this.popupOauthLink = url => popupOauthLink(url)
