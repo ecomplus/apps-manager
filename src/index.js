@@ -10,9 +10,9 @@ import installApp from './methods/install-app'
 import removeApplication from './methods/remove-application'
 import editApplication from './methods/edit-application'
 
-const EcomApps = function (sessionKey) {
+const EcomApps = function (ecomAuth) {
   const self = this
-  this.ecomAuth = new EcomAuth(sessionKey)
+  this.ecomAuth = ecomAuth || new EcomAuth()
   this.fetchApps = (meta = {}) => fetchApps(meta)
   this.findApp = appId => findApp(appId)
   this.installApp = (appId, redirect) => installApp(self, appId, redirect)
