@@ -4,7 +4,8 @@ import request from '../lib/market-requests'
  * @method
  * @memberof EcomApps
  * @name fetchApps
- * @description Fetch list of apps from Market API
+ * @description Fetch list of apps from
+ * [E-Com Plus Market API](https://github.com/ecomclub/market/blob/master/README.md#api-public-resources).
  *
  * @param {object} [meta] - Search options
  * @param {object} [meta.params] - Search filters, can be `{ title, slug, category }`
@@ -15,47 +16,52 @@ import request from '../lib/market-requests'
  * @returns {Promise<response|error>}
  *
  * @example
-// retrieve simple list of apps
+
+// Retrieve simple list of apps
 ecomApps.fetchApps()
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
-// search for specific app
+ * @example
+
+// Search for specific app
 const options = {
   params: {
     title: 'Meu App',
     slug: 'meu-app'
   }
 }
-
 ecomApps.fetchApps(options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
-// with limit and offset
+ * @example
+
+// With limit and offset
 const options = {
   limit: 10,
   offset: 2
 }
-
 ecomApps.fetchApps(options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
-// retrieve list of apps by ids
+ * @example
+
+// Retrieve list of apps by ids
 const options = {
   params: {
     app_id: '1236,1240,1245'
   }
 }
-
 ecomApps.fetchApps(options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
-*/
 
-export default (query) => {
-  const { params, limit, offset, fields } = query
+ */
+
+export default (meta = {}) => {
+  const { params, limit, offset, fields } = meta
 
   let url = '/applications?'
   if (params) {

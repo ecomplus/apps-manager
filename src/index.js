@@ -8,6 +8,7 @@
  * @module @ecomplus/apps-manager
  * @namespace EcomApps
  * @see EcomApps
+ *
  * @example
  * // ES import
  * import EcomApps from '@ecomplus/apps-manager'
@@ -18,8 +19,9 @@
  *
  * @example
  * <!-- Global `@ecomplus/apps-manager` from CDN on browser -->
- * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1.1/dist/ecom-apps.min.js"></script>
+ * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1/dist/ecom-apps.root.min.js"></script>
  */
+
 import EcomAuth from '@ecomplus/auth'
 import fetchApps from './methods/fetch-apps'
 import findApp from './methods/find-app'
@@ -27,10 +29,17 @@ import installApp from './methods/install-app'
 import removeApplication from './methods/remove-application'
 import editApplication from './methods/edit-application'
 
-const EcomApps = function (ecomAuth) {
+const EcomApps = function (ecomAuth = new EcomAuth()) {
   const self = this
-  this.ecomAuth = ecomAuth || new EcomAuth()
-  this.fetchApps = (meta = {}) => fetchApps(meta)
+
+  /**
+   * [EcomAuth](https://github.com/ecomclub/ecomplus-auth) instance.
+   * @name EcomApps#ecomAuth
+   * @type {object}
+   */
+  this.ecomAuth = ecomAuth
+
+  this.fetchApps = meta => fetchApps(meta)
   this.findApp = appId => findApp(appId)
   this.installApp = (appId, redirect) => installApp(self, appId, redirect)
   this.removeApplication = _id => removeApplication(self, _id)
@@ -38,3 +47,12 @@ const EcomApps = function (ecomAuth) {
 }
 
 export default EcomApps
+
+/**
+ * Construct a new apps manager instance object.
+ * @class EcomApps
+ * @param {object} [ecomAuth=new EcomAuth()] - [EcomAuth](https://github.com/ecomclub/ecomplus-auth) instance
+ *
+ * @example
+ * const ecomApps = new EcomApps()
+ */
