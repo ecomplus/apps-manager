@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>index.js - Documentation</title>
+    <title>@ecomplus/apps-manager - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,77 +32,155 @@
 
 <div id="main">
     
-    <h1 class="page-title">index.js</h1>
+    <h1 class="page-title">@ecomplus/apps-manager</h1>
     
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * https://github.com/ecomclub/ecomplus-auth
- * @author E-Com Club &lt;ti@e-com.club>
- * @license AGPL-3.0
- */
+        
+            
+        
+    
+</header>
 
-import EcomAuth from '@ecomplus/auth'
-import fetchApps from './methods/fetch-apps'
-import findApp from './methods/find-app'
-import installApp from './methods/install-app'
-import removeApplication from './methods/remove-application'
-import editApplication from './methods/edit-application'
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description">JS client for manage E-Com Plus Apps</div>
+            
 
-/**
- * JS client for manage E-Com Plus Apps
- * @module @ecomplus/apps-manager
- * @see EcomApps
- *
- * @example
- * // ES import
- * import EcomApps from '@ecomplus/apps-manager'
- *
- * @example
- * // With CommonJS
- * const EcomApps = require('@ecomplus/apps-manager')
- *
- * @example
- * &lt;!-- Global `@ecomplus/apps-manager` from CDN on browser -->
- * &lt;script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1/dist/ecom-apps.root.min.js">&lt;/script>
- */
+            
+                
 
-const EcomApps = function (ecomAuth = new EcomAuth()) {
-  const self = this
 
-  /**
-   * [EcomAuth](https://github.com/ecomclub/ecomplus-auth) instance.
-   * @name EcomApps#ecomAuth
-   * @type {object}
-   */
-  this.ecomAuth = ecomAuth
 
-  this.fetchApps = meta => fetchApps(meta)
-  this.findApp = appId => findApp(appId)
-  this.installApp = (appId, redirect) => installApp(self, appId, redirect)
-  this.removeApplication = _id => removeApplication(self, _id)
-  this.editApplication = (_id, body) => editApplication(self, _id, body)
-}
 
-export default EcomApps
+<dl class="details">
 
-/**
- * Construct a new apps manager instance object.
- * @class EcomApps
- * @param {object} [ecomAuth=new EcomAuth()] - [EcomAuth](https://github.com/ecomclub/ecomplus-auth) instance
- *
- * @example
- * const ecomApps = new EcomApps()
- */
-</code></pre>
-        </article>
-    </section>
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="EcomApps.html">EcomApps</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>// ES import
+import EcomApps from '@ecomplus/apps-manager'</code></pre>
+
+    <pre class="prettyprint"><code>// With CommonJS
+const EcomApps = require('@ecomplus/apps-manager')</code></pre>
+
+    <pre class="prettyprint"><code>&lt;!-- Global `@ecomplus/apps-manager` from CDN on browser -->
+&lt;script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1/dist/ecom-apps.root.min.js">&lt;/script></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
