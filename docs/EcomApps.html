@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="EcomApps.html">EcomApps</a><ul class='methods'><li data-type='method'><a href="EcomApps.html#.editApplication">editApplication</a></li><li data-type='method'><a href="EcomApps.html#.fetchApps">fetchApps</a></li><li data-type='method'><a href="EcomApps.html#.findApp">findApp</a></li><li data-type='method'><a href="EcomApps.html#.installApp">installApp</a></li><li data-type='method'><a href="EcomApps.html#.removeApplication">removeApplication</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="EcomApps.html">EcomApps</a><ul class='methods'><li data-type='method'><a href="EcomApps.html#.editApplication">editApplication</a></li><li data-type='method'><a href="EcomApps.html#.fetchApps">fetchApps</a></li><li data-type='method'><a href="EcomApps.html#.findApp">findApp</a></li><li data-type='method'><a href="EcomApps.html#.installApp">installApp</a></li><li data-type='method'><a href="EcomApps.html#.removeApplication">removeApplication</a></li></ul></li></ul><h3>Namespaces</h3><ul><li></li></ul>
 </nav>
 
 <div id="main">
@@ -131,7 +131,7 @@ import EcomApps from '@ecomplus/apps-manager'</code></pre>
 const EcomApps = require('@ecomplus/apps-manager')</code></pre>
 
     <pre class="prettyprint"><code>&lt;!-- Global `@ecomplus/apps-manager` from CDN on browser -->
-&lt;script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1.1/dist/ecom-apps.min.js">&lt;/script></code></pre>
+&lt;script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1/dist/ecom-apps.root.min.js">&lt;/script></code></pre>
 
             
         
@@ -150,6 +150,83 @@ const EcomApps = require('@ecomplus/apps-manager')</code></pre>
 
     
 
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="ecomAuth"><span class="type-signature"></span>ecomAuth<span class="type-signature"> :object</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    [EcomAuth](https://github.com/ecomclub/ecomplus-auth) instance.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
     
 
     
@@ -213,7 +290,7 @@ const EcomApps = require('@ecomplus/apps-manager')</code></pre>
 
 <div class="description">
     Edit application body in Store API
-<a href="https://developers.e-com.plus/docs/api/#/store/applications/specific-application">E-Com Plus Store REST API</a>.
+<a href="https://developers.e-com.plus/docs/api/#/store/applications/specific-application">Store API</a>.
 </div>
 
 
@@ -235,7 +312,6 @@ const EcomApps = require('@ecomplus/apps-manager')</code></pre>
     my_app_hidden_data_config: true
   }
 }
-
 ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
   .then(result => console.log(result))
   .catch(e => console.log(e))</code></pre>
@@ -284,7 +360,7 @@ ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
 
             
 
-            <td class="description last">Object ID of application in Store API</td>
+            <td class="description last">Object ID (`_id`) of application in Store API</td>
         </tr>
 
     
@@ -307,7 +383,8 @@ ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
 
             
 
-            <td class="description last">Application body must follow the [schema] <a href="https://developers.e-com.plus/docs/api/#/store/applications/applications">https://developers.e-com.plus/docs/api/#/store/applications/applications</a></td>
+            <td class="description last">Application body must follow the
+<a href="https://developers.e-com.plus/docs/api/#/store/applications/applications">schema</a></td>
         </tr>
 
     
@@ -367,7 +444,7 @@ ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="methods_fetch-apps.js.html">methods/fetch-apps.js</a>, <a href="methods_fetch-apps.js.html#line2">line 2</a>
+        <a href="methods_fetch-apps.js.html">methods/fetch-apps.js</a>, <a href="methods_fetch-apps.js.html#line3">line 3</a>
     </li></ul></dd>
     
 
@@ -407,7 +484,8 @@ ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
 
 
 <div class="description">
-    fetch list of apps from Market API
+    Fetch list of apps from
+[E-Com Plus Market API](https://github.com/ecomclub/market/blob/master/README.md#api-public-resources).
 </div>
 
 
@@ -418,42 +496,39 @@ ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
 
 
 
-    <h5>Example</h5>
+    <h5>Examples</h5>
     
-    <pre class="prettyprint"><code>// retrieve simple list of apps
+    <pre class="prettyprint"><code>// Retrieve simple list of apps
 ecomApps.fetchApps()
   .then(result => console.log(result))
-  .catch(e => console.log(e))
+  .catch(e => console.log(e))</code></pre>
 
-// search for specific app
+    <pre class="prettyprint"><code>// Search for specific app
 const options = {
   params: {
     title: 'Meu App',
     slug: 'meu-app'
   }
 }
-
 ecomApps.fetchApps(options)
   .then(result => console.log(result))
-  .catch(e => console.log(e))
+  .catch(e => console.log(e))</code></pre>
 
-// with limit and offset
+    <pre class="prettyprint"><code>// With limit and offset
 const options = {
   limit: 10,
   offset: 2
 }
-
 ecomApps.fetchApps(options)
   .then(result => console.log(result))
-  .catch(e => console.log(e))
+  .catch(e => console.log(e))</code></pre>
 
-// retrieve list of apps by ids
+    <pre class="prettyprint"><code>// Retrieve list of apps by ids
 const options = {
   params: {
     app_id: '1236,1240,1245'
   }
 }
-
 ecomApps.fetchApps(options)
   .then(result => console.log(result))
   .catch(e => console.log(e))</code></pre>
@@ -574,7 +649,7 @@ ecomApps.fetchApps(options)
                 </td>
             
 
-            <td class="description last">search parameters, can be {title},{slug},{category}</td>
+            <td class="description last">Search filters, can be `{ title, slug, category }`</td>
         </tr>
 
     
@@ -756,7 +831,7 @@ ecomApps.fetchApps(options)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="methods_find-app.js.html">methods/find-app.js</a>, <a href="methods_find-app.js.html#line2">line 2</a>
+        <a href="methods_find-app.js.html">methods/find-app.js</a>, <a href="methods_find-app.js.html#line3">line 3</a>
     </li></ul></dd>
     
 
@@ -796,7 +871,8 @@ ecomApps.fetchApps(options)
 
 
 <div class="description">
-    Fetch specific app from market api
+    Fetch specific app from
+[E-Com Plus Market API](https://github.com/ecomclub/market/blob/master/README.md#api-public-resources).
 </div>
 
 
@@ -857,7 +933,7 @@ ecomApps.fetchApps(options)
 
             
 
-            <td class="description last">Market application ID</td>
+            <td class="description last">Market application ID (`app_id`)</td>
         </tr>
 
     
@@ -1074,7 +1150,9 @@ ecomApps.fetchApps(options)
                 </td>
             
 
-            <td class="description last">Set to true when you need to authenticate the user to another flux as OAuth after install the app</td>
+            <td class="description last">Set to true when you
+want to automatically redirect user on new window
+when app returns a `redirect_uri` (usually for oauth flux)</td>
         </tr>
 
     
@@ -1174,8 +1252,8 @@ ecomApps.fetchApps(options)
 
 
 <div class="description">
-    Uninstall application from Store API
-<a href="https://developers.e-com.plus/docs/api/#/store/applications/specific-application">E-Com Plus Store REST API</a>.
+    Delete application from
+<a href="https://developers.e-com.plus/docs/api/#/store/applications/specific-application">Store API</a>.
 </div>
 
 
@@ -1236,7 +1314,7 @@ ecomApps.fetchApps(options)
 
             
 
-            <td class="description last">Object ID of application in Store API</td>
+            <td class="description last">Object ID (`_id`) of application in Store API</td>
         </tr>
 
     
@@ -1299,7 +1377,7 @@ ecomApps.fetchApps(options)
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Nov 06 2019 14:09:39 GMT-0200 (GMT-02:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Nov 06 2019 14:59:27 GMT-0200 (Brasilia Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
