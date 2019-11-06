@@ -1,3 +1,18 @@
+/**
+ * @method
+ * @memberof EcomApps
+ * @name installApp
+ * @description Install Market Apps into
+ * [E-Com Plus Store REST API]{@link https://developers.e-com.plus/docs/api/#/store/applications/applications}.
+ * @param {number} appId - Market application ID
+ * @param {boolean} [redirect=false] - Set to true when you need to authenticate the user to another flux as OAuth after install the app
+ * @returns {Promise<response|error>}
+ * @example
+
+ecomApps.installApp(1236, true)
+  .then(result => console.log(result))
+  .catch(e => console.log(e))
+*/
 export default (self, appId, redirect = false) => {
   const { findApp, ecomAuth } = self
   const appProps = ['app_id', 'title', 'slug', 'paid', 'version', 'version_date', 'type', 'load_events', 'script_uri', 'github_repository', 'authentication', 'auth_callback_uri', 'auth_scope']

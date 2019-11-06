@@ -2,6 +2,23 @@
  * https://github.com/ecomclub/ecomplus-auth
  * @author E-Com Club <ti@e-com.club>
  * @license AGPL-3.0
+ *
+ * @description
+ * JS client for manage E-Com Plus Apps
+ * @module @ecomplus/apps-manager
+ * @namespace EcomApps
+ * @see EcomApps
+ * @example
+ * // ES import
+ * import EcomApps from '@ecomplus/apps-manager'
+ *
+ * @example
+ * // With CommonJS
+ * const EcomApps = require('@ecomplus/apps-manager')
+ *
+ * @example
+ * <!-- Global `@ecomplus/apps-manager` from CDN on browser -->
+ * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1.1/dist/ecom-apps.min.js"></script>
  */
 import EcomAuth from '@ecomplus/auth'
 import fetchApps from './methods/fetch-apps'
