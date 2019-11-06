@@ -10,7 +10,7 @@
  * want to automatically redirect user on new window
  * when app returns a `redirect_uri` (usually for oauth flux)
  *
- * @returns {Promise<response|error>}
+ * @returns {Promise<({ app, result })|error>}
  *
  * @example
 

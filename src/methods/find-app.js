@@ -9,7 +9,7 @@ import request from '../lib/market-requests'
  *
  * @param {number} appId - Market application ID (`app_id`)
  *
- * @returns {Promise<response|error>}
+ * @returns {Promise<data|error>}
  *
  * @example
 

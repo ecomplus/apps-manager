@@ -7,7 +7,7 @@
  *
  * @param {number} applicationId - Object ID (`_id`) of application in Store API
  *
- * @returns {Promise<response|error>}
+ * @returns {Promise<data|error>}
  *
  * @example
 

@@ -13,7 +13,7 @@ import request from '../lib/market-requests'
  * @param {number} [meta.offset=0] - Specifies the first entry to return
  * @param {array} [meta.fields] - Specifies the object properties to return
  *
- * @returns {Promise<response|error>}
+ * @returns {Promise<apps|error>}
  *
  * @example
 

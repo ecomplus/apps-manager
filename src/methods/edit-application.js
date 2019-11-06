@@ -9,7 +9,7 @@
  * @param {object} body - Application body must follow the
  * [schema]{@link https://developers.e-com.plus/docs/api/#/store/applications/applications}
  *
- * @returns {Promise<response|error>}
+ * @returns {Promise<null|error>}
  *
  * @example
 
