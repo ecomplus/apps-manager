@@ -65,6 +65,11 @@ export default (meta = {}) => {
 
   let url = '/applications?'
   if (params) {
+    for (const key in params) {
+      if (params[key] === undefined || params[key] === null) {
+        delete params[key]
+      }
+    }
     url += Object.keys(params).map(key => key + '=' + params[key]).join('&')
   }
   if (limit) {
@@ -76,6 +81,5 @@ export default (meta = {}) => {
   if (fields && Array.isArray(fields) && fields.length) {
     url += `&fields=${fields.join()}`
   }
-
   return request({ url }).then(resp => resp.data)
 }
