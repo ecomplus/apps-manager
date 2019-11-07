@@ -30,13 +30,13 @@
   },
   "homepage": "https://github.com/ecomclub/apps-manager#readme",
   "dependencies": {
-    "@babel/runtime": "^7.7.1",
-    "@ecomplus/auth": "^0.3.0",
+    "@babel/runtime": "^7.7.2",
+    "@ecomplus/auth": "^0.3.1",
     "axios": "^0.19.0",
-    "core-js": "^3.3.6"
+    "core-js": "^3.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.0",
+    "@babel/core": "^7.7.2",
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.7.1",
     "@commitlint/cli": "^8.2.0",
