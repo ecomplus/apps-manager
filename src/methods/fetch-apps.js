@@ -66,11 +66,12 @@ export default (meta = {}) => {
   let url = '/applications?'
   if (params) {
     for (const key in params) {
-      if (params[key] === undefined || params[key] === null) {
-        delete params[key]
+      switch (typeof params[key]) {
+        case 'string':
+        case 'number':
+          url += `${key}=${params[key]}&`
       }
     }
-    url += Object.keys(params).map(key => key + '=' + params[key]).join('&')
   }
   if (limit) {
     url += `&limit=${limit}`
