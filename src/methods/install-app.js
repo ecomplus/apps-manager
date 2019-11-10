@@ -70,7 +70,7 @@ export default (self, appId, redirect = false, appBody) => {
   }
 
   if (appBody && appBody.app_id) {
-    install(appBody)
+    return install(appBody)
   } else {
     return findApp(appId).then(app => install(app))
   }
