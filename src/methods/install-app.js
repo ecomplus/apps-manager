@@ -9,7 +9,7 @@
  * @param {boolean} [redirect=false] - Set to true when you
  * want to automatically redirect user on new window
  * when app returns a `redirect_uri` (usually for oauth flux)
- * @param {object} appBody - Market application body
+ * @param {object} [appBody] - Market application body
  * @returns {Promise<{ app, result }|error>}
  *
  * @example
