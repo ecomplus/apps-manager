@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/ecomclub/apps-manager/compare/v0.1.3...v0.2.0) (2019-11-10)
+
+
+### Features
+
+* **my-applications:** fetch merchant's applications list ([01b181c](https://github.com/ecomclub/apps-manager/commit/01b181c2c7ff38d99e0d427ac59aa50d10525d94))
+
 ### [0.1.3](https://github.com/ecomclub/apps-manager/compare/v0.1.2...v0.1.3) (2019-11-07)
 
 
