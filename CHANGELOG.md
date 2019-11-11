@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/ecomclub/apps-manager/compare/v0.2.0...v0.2.1) (2019-11-11)
+
+
+### Features
+
+* **#11:** install application from the optional body informed ([44c192c](https://github.com/ecomclub/apps-manager/commit/44c192c0a1810d5e0e183d9f549683c5e83a94ef)), closes [#11](https://github.com/ecomclub/apps-manager/issues/11)
+
 ## [0.2.0](https://github.com/ecomclub/apps-manager/compare/v0.1.3...v0.2.0) (2019-11-10)
 
 
