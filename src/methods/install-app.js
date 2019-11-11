@@ -9,7 +9,7 @@
  * @param {boolean} [redirect=false] - Set to true when you
  * want to automatically redirect user on new window
  * when app returns a `redirect_uri` (usually for oauth flux)
- *
+ * @param {object} [appBody] - Market application body
  * @returns {Promise<{ app, result }|error>}
  *
  * @example
@@ -20,7 +20,7 @@ ecomApps.installApp(1236, true)
 
  */
 
-export default (self, appId, redirect = false) => {
+export default (self, appId, redirect = false, appBody) => {
   const { findApp, ecomAuth } = self
   const appProps = [
     'app_id',
@@ -37,9 +37,9 @@ export default (self, appId, redirect = false) => {
     'auth_callback_uri',
     'auth_scope'
   ]
-  const body = {}
 
-  return findApp(appId).then(app => {
+  const install = (app) => {
+    const body = {}
     appProps.forEach(prop => {
       if (app[prop]) {
         body[prop] = app[prop]
@@ -67,7 +67,13 @@ export default (self, appId, redirect = false) => {
           result: resp.data
         }
       })
-  })
+  }
+
+  if (appBody && appBody.app_id) {
+    return install(appBody)
+  } else {
+    return findApp(appId).then(app => install(app))
+  }
 }
 
 const createPopup = (url, title) => {

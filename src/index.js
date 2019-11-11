@@ -42,7 +42,7 @@ const EcomApps = function (ecomAuth = new EcomAuth()) {
 
   this.fetchMarketApps = meta => fetchMarketApps(meta)
   this.findApp = appId => findApp(appId)
-  this.installApp = (appId, redirect) => installApp(self, appId, redirect)
+  this.installApp = (appId, redirect, body) => installApp(self, appId, redirect, body)
   this.removeApplication = _id => removeApplication(self, _id)
   this.editApplication = (_id, body) => editApplication(self, _id, body)
   this.fetchStoreApplications = appId => fetchStoreApplications(self, appId)
