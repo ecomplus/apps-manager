@@ -3,7 +3,7 @@ import request from '../lib/market-requests'
 /**
  * @method
  * @memberof EcomApps
- * @name fetchApps
+ * @name fetchMarketApps
  * @description Fetch list of apps from
  * [E-Com Plus Market API](https://github.com/ecomclub/market/blob/master/README.md#api-public-resources).
  *
@@ -18,7 +18,7 @@ import request from '../lib/market-requests'
  * @example
 
 // Retrieve simple list of apps
-ecomApps.fetchApps()
+ecomApps.fetchMarketApps()
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
@@ -31,7 +31,7 @@ const options = {
     slug: 'meu-app'
   }
 }
-ecomApps.fetchApps(options)
+ecomApps.fetchMarketApps(options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
@@ -42,7 +42,7 @@ const options = {
   limit: 10,
   offset: 2
 }
-ecomApps.fetchApps(options)
+ecomApps.fetchMarketApps(options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
@@ -54,7 +54,7 @@ const options = {
     app_id: '1236,1240,1245'
   }
 }
-ecomApps.fetchApps(options)
+ecomApps.fetchMarketApps(options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
