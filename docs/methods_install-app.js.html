@@ -114,7 +114,7 @@ export default (self, appId, redirect = false, appBody) => {
   }
 
   if (appBody &amp;&amp; appBody.app_id) {
-    install(appBody)
+    return install(appBody)
   } else {
     return findApp(appId).then(app => install(app))
   }

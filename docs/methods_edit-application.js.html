@@ -79,14 +79,17 @@ export default (self, _id, body) => {
 
   let data = null
   let hiddenData = null
+  const editAppBody = {}
   for (const key in body) {
-    if (key === 'data') {
-      data = body[key]
-      delete body[key]
-    }
-    if (key === 'hidden_data') {
-      hiddenData = body[key]
-      delete body[key]
+    switch (key) {
+      case 'data':
+        data = body[key]
+        break
+      case 'hidden_data':
+        hiddenData = body[key]
+        break
+      default:
+        editAppBody[key] = body[key]
     }
   }
 
@@ -96,8 +99,8 @@ export default (self, _id, body) => {
   if (hiddenData &amp;&amp; typeof hiddenData === 'object') {
     promises.push(ecomAuth.requestApi(`/applications/${_id}/hidden_data.json`, method, hiddenData))
   }
-  if (!Object.keys(body).length) {
-    promises.push(ecomAuth.requestApi(`/applications/${_id}.json`, method, body))
+  if (!Object.keys(editAppBody).length) {
+    promises.push(ecomAuth.requestApi(`/applications/${_id}.json`, method, editAppBody))
   }
 
   return Promise.all(promises)
