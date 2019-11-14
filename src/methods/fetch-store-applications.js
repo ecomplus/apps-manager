@@ -4,7 +4,8 @@
  * @name fetchStoreApplications
  * @description Fetch merchant's applications list
  * [Store API]{@link https://developers.e-com.plus/docs/api/#/store/applications}.
- *
+ * @param {number} [appId] - Specifies application id to search
+ * @param {array} [fields] - Specifies t[he object properties to return
  *
  * @returns {Promise<data|error>}
  *
@@ -16,10 +17,13 @@ ecomApps.fetchStoreApplications()
 
  */
 
-export default (self, appId) => {
-  let url = '/applications.json'
+export default (self, appId, fields) => {
+  let url = '/applications.json?'
   if (appId) {
-    url += `?app_id=${appId}`
+    url += `app_id=${appId}`
+  }
+  if (fields && Array.isArray(fields) && fields.length) {
+    url += `&fields=${fields.join()}`
   }
   return self.ecomAuth.requestApi(url).then(({ data }) => data.result)
 }
