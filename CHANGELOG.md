@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/ecomclub/apps-manager/compare/v0.2.0...v0.2.1) (2019-11-11)
+
+
+### Features
+
+* **#11:** install application from the optional body informed ([44c192c](https://github.com/ecomclub/apps-manager/commit/44c192c0a1810d5e0e183d9f549683c5e83a94ef)), closes [#11](https://github.com/ecomclub/apps-manager/issues/11)
+
+## [0.2.0](https://github.com/ecomclub/apps-manager/compare/v0.1.3...v0.2.0) (2019-11-10)
+
+
+### Features
+
+* **my-applications:** fetch merchant's applications list ([01b181c](https://github.com/ecomclub/apps-manager/commit/01b181c2c7ff38d99e0d427ac59aa50d10525d94))
+
+### [0.1.3](https://github.com/ecomclub/apps-manager/compare/v0.1.2...v0.1.3) (2019-11-07)
+
+
+### Bug Fixes
+
+* **edit-application:** stop modifying original body object ([c9c4caa](https://github.com/ecomclub/apps-manager/commit/c9c4caa011c0b57659b19a95e9983a722dccfa9e))
+* **fetch-apps:** checks if there are no params nulls or undefined ([65016c3](https://github.com/ecomclub/apps-manager/commit/65016c39bc6feb96ae4eefddc644af162f19399d))
+
 ### [0.1.2](https://github.com/ecomclub/apps-manager/compare/v0.1.1...v0.1.2) (2019-11-06)
 
 
