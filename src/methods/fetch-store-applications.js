@@ -5,7 +5,7 @@
  * @description Fetch merchant's applications list
  * [Store API]{@link https://developers.e-com.plus/docs/api/#/store/applications}.
  * @param {number} [appId] - Specifies application id to search
- * @param {array} [fields] - Specifies t[he object properties to return
+ * @param {array} [fields] - Specifies the object properties to return
  *
  * @returns {Promise<data|error>}
  *
