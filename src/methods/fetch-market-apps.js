@@ -9,8 +9,8 @@ import request from '../lib/market-requests'
  *
  * @param {object} [meta] - Search options
  * @param {object} [meta.params] - Search filters, can be `{ title, slug, category }`
- * @param {number} [meta.limit=30] - Set the maximum number of results to return
- * @param {number} [meta.offset=0] - Specifies the first entry to return
+ * @param {number} [meta.limit] - Set the maximum number of results to return
+ * @param {number} [meta.offset] - Specifies the first entry to return
  * @param {array} [meta.fields] - Specifies the object properties to return
  *
  * @returns {Promise<apps|error>}
