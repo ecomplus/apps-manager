@@ -17,7 +17,8 @@ ecomApps.fetchStoreApplications()
 
  */
 
-export default (self, appId, fields) => {
+export default (self, meta = {}) => {
+  const { appId, fields } = meta
   let url = '/applications.json?'
   if (appId) {
     url += `app_id=${appId}`
