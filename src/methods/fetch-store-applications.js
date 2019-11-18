@@ -45,7 +45,7 @@ export default (self, meta = {}) => {
   if (fields && Array.isArray(fields) && fields.length) {
     url += `&fields=${fields.join()}`
   } else if (fields && typeof fields === 'string') {
-    url += fields
+    url += `&fields=${fields}`
   }
   return self.ecomAuth.requestApi(url).then(({ data }) => data.result)
 }
