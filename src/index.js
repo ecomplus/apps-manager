@@ -11,7 +11,7 @@ import installApp from './methods/install-app'
 import removeApplication from './methods/remove-application'
 import editApplication from './methods/edit-application'
 import fetchStoreApplications from './methods/fetch-store-applications'
-import findApplication from './methods/find-application'
+import findStoreApplication from './methods/find-store-application'
 
 /**
  * JS client for manage E-Com Plus Apps
@@ -46,8 +46,8 @@ const EcomApps = function (ecomAuth = new EcomAuth()) {
   this.installApp = (appId, redirect, body) => installApp(self, appId, redirect, body)
   this.removeApplication = _id => removeApplication(self, _id)
   this.editApplication = (_id, body) => editApplication(self, _id, body)
-  this.fetchStoreApplications = (appId, fields) => fetchStoreApplications(self, appId, fields)
-  this.findApplication = _id => findApplication(self, _id)
+  this.fetchStoreApplications = meta => fetchStoreApplications(self, meta)
+  this.findStoreApplication = _id => findStoreApplication(self, _id)
 }
 
 export default EcomApps
