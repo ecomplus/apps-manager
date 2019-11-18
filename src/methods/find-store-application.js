@@ -1,7 +1,7 @@
 /**
  * @method
  * @memberof EcomApps
- * @name findApplication
+ * @name findStoreApplication
  * @description find application from
  * [Store API]{@link https://developers.e-com.plus/docs/api/#/store/applications/specific-application}.
  *
@@ -11,7 +11,7 @@
  *
  * @example
 
-ecomApps.findApplication('5dc2023456cc4e057cfe8e94')
+ecomApps.findStoreApplication('5dc2023456cc4e057cfe8e94')
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
