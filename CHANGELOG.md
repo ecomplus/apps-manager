@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/ecomclub/apps-manager/compare/v0.2.1...v0.3.0) (2019-11-18)
+
+
+### Features
+
+* **fetch-store-applications:** accept custom fields ([d5485fb](https://github.com/ecomclub/apps-manager/commit/d5485fb9369b03ab0ba3aa6cf3048db2c69234f2))
+* **fetch-store-applications:** pagination, ordering and querying ([48f8781](https://github.com/ecomclub/apps-manager/commit/48f878192904cdecda0055f8e5d1f4c8ff002980))
+* **find-application:** find application from store api ([3cc63a1](https://github.com/ecomclub/apps-manager/commit/3cc63a1dee27d0d275226f3a9ddce8edd2ca3393))
+
+
+### Bug Fixes
+
+* docs ([a5344d8](https://github.com/ecomclub/apps-manager/commit/a5344d823a137a9a05c40719f404069b2aa3e8ec))
+
 ### [0.2.1](https://github.com/ecomclub/apps-manager/compare/v0.2.0...v0.2.1) (2019-11-11)
 
 
