@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>methods/edit-application.js - Documentation</title>
+    <title>methods/find-store-application.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">methods/edit-application.js</h1>
+    <h1 class="page-title">methods/find-store-application.js</h1>
     
 
     
@@ -45,66 +45,23 @@
             <pre class="prettyprint source linenums"><code>/**
  * @method
  * @memberof EcomApps
- * @name editApplication
- * @description Edit application body in Store API
+ * @name findStoreApplication
+ * @description find application from
  * [Store API]{@link https://developers.e-com.plus/docs/api/#/store/applications/specific-application}.
  *
  * @param {number} applicationId - Object ID (`_id`) of application in Store API
- * @param {object} body - Application body must follow the
- * [schema]{@link https://developers.e-com.plus/docs/api/#/store/applications/applications}
  *
- * @returns {Promise&lt;null|error>}
+ * @returns {Promise&lt;data|error>}
  *
  * @example
 
-const body = {
-  state: 'active',
-  data: {
-    my_app_data_configs: true
-  },
-  hidden_data: {
-    my_app_hidden_data_config: true
-  }
-}
-ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
+ecomApps.findStoreApplication('5dc2023456cc4e057cfe8e94')
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
  */
 
-export default (self, _id, body) => {
-  const method = 'patch'
-  const promises = []
-  const { ecomAuth } = self
-
-  let data = null
-  let hiddenData = null
-  const editAppBody = {}
-  for (const key in body) {
-    switch (key) {
-      case 'data':
-        data = body[key]
-        break
-      case 'hidden_data':
-        hiddenData = body[key]
-        break
-      default:
-        editAppBody[key] = body[key]
-    }
-  }
-
-  if (data &amp;&amp; typeof data === 'object') {
-    promises.push(ecomAuth.requestApi(`/applications/${_id}/data.json`, method, data))
-  }
-  if (hiddenData &amp;&amp; typeof hiddenData === 'object') {
-    promises.push(ecomAuth.requestApi(`/applications/${_id}/hidden_data.json`, method, hiddenData))
-  }
-  if (!Object.keys(editAppBody).length) {
-    promises.push(ecomAuth.requestApi(`/applications/${_id}.json`, method, editAppBody))
-  }
-
-  return Promise.all(promises)
-}
+export default (self, _id) => self.ecomAuth.requestApi(`/applications/${_id}.json`)
 </code></pre>
         </article>
     </section>

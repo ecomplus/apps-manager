@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="EcomApps.html">EcomApps</a><ul class='methods'><li data-type='method'><a href="EcomApps.html#.editApplication">editApplication</a></li><li data-type='method'><a href="EcomApps.html#.fetchMarketApps">fetchMarketApps</a></li><li data-type='method'><a href="EcomApps.html#.fetchStoreApplications">fetchStoreApplications</a></li><li data-type='method'><a href="EcomApps.html#.findApp">findApp</a></li><li data-type='method'><a href="EcomApps.html#.installApp">installApp</a></li><li data-type='method'><a href="EcomApps.html#.removeApplication">removeApplication</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-@ecomplus_apps-manager.html">@ecomplus/apps-manager</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="EcomApps.html">EcomApps</a><ul class='methods'><li data-type='method'><a href="EcomApps.html#.editApplication">editApplication</a></li><li data-type='method'><a href="EcomApps.html#.fetchMarketApps">fetchMarketApps</a></li><li data-type='method'><a href="EcomApps.html#.fetchStoreApplications">fetchStoreApplications</a></li><li data-type='method'><a href="EcomApps.html#.findApp">findApp</a></li><li data-type='method'><a href="EcomApps.html#.findStoreApplication">findStoreApplication</a></li><li data-type='method'><a href="EcomApps.html#.installApp">installApp</a></li><li data-type='method'><a href="EcomApps.html#.removeApplication">removeApplication</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-@ecomplus_apps-manager.html">@ecomplus/apps-manager</a></li></ul>
 </nav>
 
 <div id="main">
@@ -71,7 +71,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line53">line 53</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -247,7 +247,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line36">line 36</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -688,6 +688,340 @@ ecomApps.fetchMarketApps(options)
         
 
         
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Search filters, can be `{ title, slug, category }`</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Set the maximum number of results to return</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Specifies the first entry to return</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Specifies the object properties to return</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(apps|error)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".fetchStoreApplications"><span class="type-signature">(static) </span>fetchStoreApplications<span class="signature">(meta<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(data|error)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="methods_fetch-store-applications.js.html">methods/fetch-store-applications.js</a>, <a href="methods_fetch-store-applications.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Fetch merchant's applications list
+<a href="https://developers.e-com.plus/docs/api/#/store/applications">Store API</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>ecomApps.fetchStoreApplications()
+  .then(result => console.log(result))
+  .catch(e => console.log(e))</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>meta</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Search options
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
         <th>Default</th>
         
 
@@ -730,7 +1064,7 @@ ecomApps.fetchMarketApps(options)
                 </td>
             
 
-            <td class="description last">Search filters, can be `{ title, slug, category }`</td>
+            <td class="description last">Search filters, can be `{ _id, app_id, title, slug, category, state, version, type }`</td>
         </tr>
 
     
@@ -849,6 +1183,43 @@ ecomApps.fetchMarketApps(options)
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>sort</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Specifies rules to order the resultant objects</td>
+        </tr>
+
+    
     </tbody>
 </table>
 
@@ -858,119 +1229,6 @@ ecomApps.fetchMarketApps(options)
     
     </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;(apps|error)></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".fetchStoreApplications"><span class="type-signature">(static) </span>fetchStoreApplications<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;(data|error)>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="methods_fetch-store-applications.js.html">methods/fetch-store-applications.js</a>, <a href="methods_fetch-store-applications.js.html#line1">line 1</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    Fetch merchant's applications list
-<a href="https://developers.e-com.plus/docs/api/#/store/applications">Store API</a>.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>ecomApps.fetchStoreApplications()
-  .then(result => console.log(result))
-  .catch(e => console.log(e))</code></pre>
-
-
 
 
 
@@ -1128,6 +1386,168 @@ ecomApps.fetchMarketApps(options)
             
 
             <td class="description last">Market application ID (`app_id`)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(data|error)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".findStoreApplication"><span class="type-signature">(static) </span>findStoreApplication<span class="signature">(applicationId)</span><span class="type-signature"> &rarr; {Promise.&lt;(data|error)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="methods_find-store-application.js.html">methods/find-store-application.js</a>, <a href="methods_find-store-application.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    find application from
+<a href="https://developers.e-com.plus/docs/api/#/store/applications/specific-application">Store API</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>ecomApps.findStoreApplication('5dc2023456cc4e057cfe8e94')
+  .then(result => console.log(result))
+  .catch(e => console.log(e))</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>applicationId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Object ID (`_id`) of application in Store API</td>
         </tr>
 
     
@@ -1608,7 +2028,7 @@ when app returns a `redirect_uri` (usually for oauth flux)</td>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Nov 12 2019 23:44:18 GMT-0200 (GMT-02:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Mon Nov 18 2019 19:05:15 GMT-0200 (GMT-02:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
