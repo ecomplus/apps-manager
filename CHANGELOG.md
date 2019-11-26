@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/ecomclub/apps-manager/compare/v0.3.0...v0.3.1) (2019-11-26)
+
+
+### Bug Fixes
+
+* **edit-application:** fix checking for edit app body object properties ([b72c288](https://github.com/ecomclub/apps-manager/commit/b72c288cc3f7d47c028ac3c672e1f08827a88a84))
+
 ## [0.3.0](https://github.com/ecomclub/apps-manager/compare/v0.2.1...v0.3.0) (2019-11-18)
 
 
