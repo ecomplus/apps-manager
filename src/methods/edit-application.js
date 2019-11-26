@@ -55,7 +55,7 @@ export default (self, _id, body) => {
   if (hiddenData && typeof hiddenData === 'object') {
     promises.push(ecomAuth.requestApi(`/applications/${_id}/hidden_data.json`, method, hiddenData))
   }
-  if (!Object.keys(editAppBody).length) {
+  if (Object.keys(editAppBody).length) {
     promises.push(ecomAuth.requestApi(`/applications/${_id}.json`, method, editAppBody))
   }
 
