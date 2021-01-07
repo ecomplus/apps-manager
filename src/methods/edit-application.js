@@ -30,7 +30,7 @@ ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
 
 import { removeInternals } from '../utils/remove-internals-attributes'
 
-export default (self, _id, body, updateInternals=false) => {
+export default (self, _id, body, updateInternals = false) => {
   const method = 'patch'
   const promises = []
   const { ecomAuth } = self
