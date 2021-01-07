@@ -45,7 +45,7 @@ const EcomApps = function (ecomAuth = new EcomAuth()) {
   this.findApp = appId => findApp(appId)
   this.installApp = (appId, redirect, body) => installApp(self, appId, redirect, body)
   this.removeApplication = _id => removeApplication(self, _id)
-  this.editApplication = (_id, body, updateInternals=false) => editApplication(self, _id, body, updateInternals)
+  this.editApplication = (_id, body, canUpdateInternals) => editApplication(self, _id, body, canUpdateInternals)
   this.fetchStoreApplications = meta => fetchStoreApplications(self, meta)
   this.findStoreApplication = _id => findStoreApplication(self, _id)
 }
