@@ -56,11 +56,6 @@ module.exports = devMode
         filename: output.filename.replace('.min.js', '.root.min.js')
       },
       externals: {
-        'lodash.isempty': {
-          commonjs: 'lodash.isempty',
-          commonjs2: 'lodash.isempty',
-          root: 'isEmpty'
-        },
         axios: {
           commonjs: 'axios',
           commonjs2: 'axios',
