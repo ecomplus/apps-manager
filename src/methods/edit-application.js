@@ -28,7 +28,9 @@ ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
 
  */
 
-export default (self, _id, body) => {
+import { removeInternals } from '../utils/remove-internals-attributes'
+
+export default (self, _id, body, updateInternals=false) => {
   const method = 'patch'
   const promises = []
   const { ecomAuth } = self
@@ -49,11 +51,19 @@ export default (self, _id, body) => {
     }
   }
 
+  let cleanData = data
+  let cleanHiddenData = hiddenData
+  console.log('[updateInternals]', updateInternals, data)
+  if (!updateInternals) {
+    cleanData = removeInternals(data)
+    cleanHiddenData = removeInternals(cleanHiddenData)
+  }
+
   if (data && typeof data === 'object') {
-    promises.push(ecomAuth.requestApi(`/applications/${_id}/data.json`, method, data))
+    promises.push(ecomAuth.requestApi(`/applications/${_id}/data.json`, method, cleanData))
   }
   if (hiddenData && typeof hiddenData === 'object') {
-    promises.push(ecomAuth.requestApi(`/applications/${_id}/hidden_data.json`, method, hiddenData))
+    promises.push(ecomAuth.requestApi(`/applications/${_id}/hidden_data.json`, method, cleanHiddenData))
   }
   if (Object.keys(editAppBody).length) {
     promises.push(ecomAuth.requestApi(`/applications/${_id}.json`, method, editAppBody))
