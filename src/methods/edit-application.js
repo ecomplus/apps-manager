@@ -53,7 +53,6 @@ export default (self, _id, body, updateInternals=false) => {
 
   let cleanData = data
   let cleanHiddenData = hiddenData
-  console.log('[updateInternals]', updateInternals, data)
   if (!updateInternals) {
     cleanData = removeInternals(data)
     cleanHiddenData = removeInternals(cleanHiddenData)
