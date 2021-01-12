@@ -22,7 +22,7 @@ ecomApps.installApp(1236, true)
 
 export default (self, appId, redirect = false, appBody) => {
   const { findApp, ecomAuth } = self
-  const appProps = [
+  const storeAppProps = [
     'app_id',
     'title',
     'slug',
@@ -40,25 +40,27 @@ export default (self, appId, redirect = false, appBody) => {
 
   const install = (app) => {
     const body = {}
-    appProps.forEach(prop => {
+    storeAppProps.forEach(prop => {
       if (app[prop]) {
         body[prop] = app[prop]
       }
     })
 
+    const storeApp = app.store_app || {}
+
     body.state = 'active'
     body.status = 'active'
-    body.admin_settings = app.json_body || {}
-    body.modules = app.module || {}
-    body.version_date = new Date(app.version_date).toISOString()
+    body.admin_settings = storeApp.admin_settings || {}
+    body.modules = storeApp.modules || {}
+    body.version_date = new Date(storeApp.version_date).toISOString()
 
     return ecomAuth
       .requestApi('/applications.json', 'post', body)
       .then(resp => {
         // redirect to oauth
-        if (redirect && app.redirect_uri) {
+        if (redirect && storeApp.redirect_uri) {
           const auth = ecomAuth.getSession()
-          const url = `${app.redirect_uri}?x_store_id=${auth.store_id}`
+          const url = `${storeApp.redirect_uri}?x_store_id=${auth.store_id}`
           createPopup(url, `Authentication ${app.title}`)
         }
 
@@ -69,7 +71,7 @@ export default (self, appId, redirect = false, appBody) => {
       })
   }
 
-  if (appBody && appBody.app_id) {
+  if (appBody && appBody.store_app && appBody.store_app.app_id) {
     return install(appBody)
   } else {
     return findApp(appId).then(app => install(app))
