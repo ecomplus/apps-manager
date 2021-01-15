@@ -19,7 +19,7 @@ ecomApps.findApp(1236)
 
  */
 
-export default appId => {
+export default (self, appId) => {
   if (!appId || isNaN(appId)) {
     return Promise.reject(new Error('app_id is invalid'))
   }

@@ -4,7 +4,7 @@
  * @license AGPL-3.0
  */
 
-import EcomAuth from '@ecomplus/auth'
+import ecomAuth from '@ecomplus/auth'
 import listFromMarket from './methods/list-from-market'
 import findOnMarket from './methods/find-on-market'
 import install from './methods/install'
@@ -31,7 +31,7 @@ import find from './methods/find'
  * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1/dist/ecom-apps.root.min.js"></script>
  */
 
-const EcomApps = function (ecomAuth = new EcomAuth()) {
+const EcomApps = function () {
   const self = this
 
   /**
@@ -55,7 +55,6 @@ export default EcomApps
 /**
  * Construct a new apps manager instance object.
  * @class EcomApps
- * @param {object} [ecomAuth=new EcomAuth()] - [EcomAuth](https://github.com/ecomclub/ecomplus-auth) instance
  *
  * @example
  * const ecomApps = new EcomApps()

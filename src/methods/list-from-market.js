@@ -31,7 +31,7 @@ const options = {
     slug: 'meu-app'
   }
 }
-ecomApps.listFromMarket(options)
+ecomApps.listFromMarket(self, options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
@@ -42,7 +42,7 @@ const options = {
   limit: 10,
   offset: 2
 }
-ecomApps.listFromMarket(options)
+ecomApps.listFromMarket(self, options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
@@ -54,13 +54,13 @@ const options = {
     app_id: '1236,1240,1245'
   }
 }
-ecomApps.listFromMarket(options)
+ecomApps.listFromMarket(self, options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
  */
 
-export default (meta = {}) => {
+export default (self, meta = {}) => {
   const { params, limit, offset, fields } = meta
 
   let url = '/applications?'
