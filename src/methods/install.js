@@ -39,14 +39,13 @@ export default (self, appId, redirect = false, appBody) => {
   ]
 
   const install = (app) => {
+    const storeApp = app.store_app || {}
     const body = {}
     storeAppProps.forEach(prop => {
-      if (app[prop]) {
-        body[prop] = app[prop]
+      if (storeApp[prop]) {
+        body[prop] = storeApp[prop]
       }
     })
-
-    const storeApp = app.store_app || {}
 
     body.state = 'active'
     body.status = 'active'

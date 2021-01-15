@@ -5,13 +5,13 @@
  */
 
 import EcomAuth from '@ecomplus/auth'
-import fetchMarketApps from './methods/fetch-market-apps'
-import findApp from './methods/find-app'
-import installApp from './methods/install-app'
-import removeApplication from './methods/remove-application'
-import editApplication from './methods/edit-application'
-import fetchStoreApplications from './methods/fetch-store-applications'
-import findStoreApplication from './methods/find-store-application'
+import listFromMarket from './methods/list-from-market'
+import findOnMarket from './methods/find-on-market'
+import install from './methods/install'
+import remove from './methods/remove'
+import edit from './methods/edit'
+import list from './methods/list'
+import find from './methods/find'
 
 /**
  * JS client for manage E-Com Plus Apps
@@ -41,13 +41,13 @@ const EcomApps = function (ecomAuth = new EcomAuth()) {
    */
   this.ecomAuth = ecomAuth
 
-  this.fetchMarketApps = meta => fetchMarketApps(meta)
-  this.findApp = appId => findApp(appId)
-  this.installApp = (appId, redirect, body) => installApp(self, appId, redirect, body)
-  this.removeApplication = _id => removeApplication(self, _id)
-  this.editApplication = (_id, body, canUpdateInternals) => editApplication(self, _id, body, canUpdateInternals)
-  this.fetchStoreApplications = meta => fetchStoreApplications(self, meta)
-  this.findStoreApplication = _id => findStoreApplication(self, _id)
+  this.listFromMarket = meta => listFromMarket(meta)
+  this.findOnMarket = appId => findOnMarket(appId)
+  this.install = (appId, redirect, body) => install(self, appId, redirect, body)
+  this.remove = _id => remove(self, _id)
+  this.edit = (_id, body, canUpdateInternals) => edit(self, _id, body, canUpdateInternals)
+  this.list = meta => list(self, meta)
+  this.find = _id => find(self, _id)
 }
 
 export default EcomApps
