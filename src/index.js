@@ -41,8 +41,8 @@ const EcomApps = function (ecomAuth = new EcomAuth()) {
    */
   this.ecomAuth = ecomAuth
 
-  this.listFromMarket = meta => listFromMarket(meta)
-  this.findOnMarket = appId => findOnMarket(appId)
+  this.listFromMarket = meta => listFromMarket(self, meta)
+  this.findOnMarket = appId => findOnMarket(self, appId)
   this.install = (appId, redirect, body) => install(self, appId, redirect, body)
   this.remove = _id => remove(self, _id)
   this.edit = (_id, body, canUpdateInternals) => edit(self, _id, body, canUpdateInternals)
