@@ -1,7 +1,7 @@
 /**
  * @method
  * @memberof EcomApps
- * @name removeApplication
+ * @name remove
  * @description Delete application from
  * [Store API]{@link https://developers.e-com.plus/docs/api/#/store/applications/specific-application}.
  *
@@ -11,7 +11,7 @@
  *
  * @example
 
-ecomApps.removeApplication('5dc2023456cc4e057cfe8e94')
+ecomApps.remove('5dc2023456cc4e057cfe8e94')
   .then(result => console.log(result))
   .catch(e => console.log(e))
 

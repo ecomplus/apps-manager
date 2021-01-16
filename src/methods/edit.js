@@ -1,13 +1,15 @@
 /**
  * @method
  * @memberof EcomApps
- * @name editApplication
+ * @name edit
  * @description Edit application body in Store API
  * [Store API]{@link https://developers.e-com.plus/docs/api/#/store/applications/specific-application}.
  *
  * @param {number} applicationId - Object ID (`_id`) of application in Store API
  * @param {object} body - Application body must follow the
  * [schema]{@link https://developers.e-com.plus/docs/api/#/store/applications/applications}
+ * @param {boolean} canUpdateInternals - Force update internals attributes
+
  *
  * @returns {Promise<null|error>}
  *
@@ -22,7 +24,7 @@ const body = {
     my_app_hidden_data_config: true
   }
 }
-ecomApps.editApplication('5dc2023456cc4e057cfe8e94', body)
+ecomApps.edit('5dc2023456cc4e057cfe8e94', body)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 

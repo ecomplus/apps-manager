@@ -1,7 +1,7 @@
 /**
  * @method
  * @memberof EcomApps
- * @name installApp
+ * @name install
  * @description Install Market Apps into
  * [E-Com Plus Store REST API]{@link https://developers.e-com.plus/docs/api/#/store/applications/applications}.
  *
@@ -14,7 +14,7 @@
  *
  * @example
 
-ecomApps.installApp(1236, true)
+ecomApps.install(1236, true)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 

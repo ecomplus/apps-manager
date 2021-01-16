@@ -3,7 +3,7 @@ import request from '../lib/market-requests'
 /**
  * @method
  * @memberof EcomApps
- * @name findApp
+ * @name findOnMarket
  * @description Fetch specific app from
  * [E-Com Plus Market API](https://github.com/ecomclub/market/blob/master/README.md#api-public-resources).
  *
@@ -13,7 +13,7 @@ import request from '../lib/market-requests'
  *
  * @example
 
-ecomApps.findApp(1236)
+ecomApps.findOnMarket(1236)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
