@@ -3,7 +3,7 @@ import request from '../lib/market-requests'
 /**
  * @method
  * @memberof EcomApps
- * @name fetchMarketApps
+ * @name listFromMarket
  * @description Fetch list of apps from
  * [E-Com Plus Market API](https://github.com/ecomclub/market/blob/master/README.md#api-public-resources).
  *
@@ -18,7 +18,7 @@ import request from '../lib/market-requests'
  * @example
 
 // Retrieve simple list of apps
-ecomApps.fetchMarketApps()
+ecomApps.listFromMarket()
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
@@ -31,7 +31,7 @@ const options = {
     slug: 'meu-app'
   }
 }
-ecomApps.fetchMarketApps(options)
+ecomApps.listFromMarket(self, options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
@@ -42,7 +42,7 @@ const options = {
   limit: 10,
   offset: 2
 }
-ecomApps.fetchMarketApps(options)
+ecomApps.listFromMarket(self, options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
@@ -54,13 +54,13 @@ const options = {
     app_id: '1236,1240,1245'
   }
 }
-ecomApps.fetchMarketApps(options)
+ecomApps.listFromMarket(self, options)
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
  */
 
-export default (meta = {}) => {
+export default (self, meta = {}) => {
   const { params, limit, offset, fields } = meta
 
   let url = '/applications?'

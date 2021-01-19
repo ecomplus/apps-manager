@@ -6,7 +6,7 @@ const { dependencies } = require('./package.json')
 
 // preset default output object
 const output = {
-  library: 'EcomApps',
+  library: 'ecomApps',
   libraryTarget: 'umd',
   libraryExport: 'default',
   path: path.resolve(__dirname, 'dist'),
@@ -74,7 +74,7 @@ module.exports = devMode
         '@ecomplus/auth': {
           commonjs: '@ecomplus/auth',
           commonjs2: '@ecomplus/auth',
-          root: 'EcomAuth'
+          root: 'ecomAuth'
         }
       }
     }

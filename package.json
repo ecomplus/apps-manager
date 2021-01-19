@@ -31,7 +31,7 @@
   "homepage": "https://github.com/ecomplus/apps-manager#readme",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "@ecomplus/auth": "^0.4.1",
+    "@ecomplus/auth": "^1.0.0-rc.0",
     "axios": "^0.21.0",
     "core-js": "^3.8.2"
   },

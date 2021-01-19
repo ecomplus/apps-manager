@@ -1,7 +1,7 @@
 /**
  * @method
  * @memberof EcomApps
- * @name fetchStoreApplications
+ * @name list
  * @description Fetch merchant's applications list
  * [Store API]{@link https://developers.e-com.plus/docs/api/#/store/applications}.
  *
@@ -15,7 +15,7 @@
  *
  * @example
 
-ecomApps.fetchStoreApplications()
+ecomApps.list()
   .then(result => console.log(result))
   .catch(e => console.log(e))
 
