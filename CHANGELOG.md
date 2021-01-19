@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-rc.1](https://github.com/ecomplus/apps-manager/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2021-01-19)
+
+
+### Bug Fixes
+
+* **deps:** remove @babel/runtime from direct pkg deps ([7afb6b8](https://github.com/ecomplus/apps-manager/commit/7afb6b81a44be0266d28e9a9446162175dd1c5e4))
+
 ## [1.0.0-rc.0](https://github.com/ecomplus/apps-manager/compare/v0.3.2...v1.0.0-rc.0) (2021-01-19)
 
 
