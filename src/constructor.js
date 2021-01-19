@@ -1,5 +1,5 @@
 /**
- * https://github.com/ecomclub/ecomplus-auth
+ * https://github.com/ecomplus/apps-manager
  * @author E-Com Club <ti@e-com.club>
  * @license AGPL-3.0
  */
