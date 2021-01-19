@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-rc.0](https://github.com/ecomplus/apps-manager/compare/v0.3.2...v1.0.0-rc.0) (2021-01-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* renamed fetchMarketApps => listFromMarket
+ findApp => findOnMarket
+ installApp
+=> install
+ fetchStoreApplications => list
+ findStoreApplication => find
+ editApplication =>
+edit
+ removeApplication => remove
+* **market-requests:** REST API version change, `findApp` and `fetchMarketApps` refactored
+
+### Features
+
+* convert to export instance of EcomApps ([1607b32](https://github.com/ecomplus/apps-manager/commit/1607b32e5f4864b8b3b1c4354fb889388aef34d7))
+* **market-requests:** updating to market api v2 ([1c2979b](https://github.com/ecomplus/apps-manager/commit/1c2979badd201be6e3a009b4c035768fbdd0f597))
+
+
+### Bug Fixes
+
+* **deps:** update dependency axios to ^0.21.0 [security] ([#64](https://github.com/ecomplus/apps-manager/issues/64)) ([f76ff06](https://github.com/ecomplus/apps-manager/commit/f76ff06a5f9c755bde625024e9edae1e2c5d8692))
+* **edit-application:** remove internals atributtes by default and handle `canUpdateInternals` arg ([#65](https://github.com/ecomplus/apps-manager/issues/65)) ([b8525e4](https://github.com/ecomplus/apps-manager/commit/b8525e4dbad02b10f65527fd8cac043e8b482e95))
+
+
+* renamed methods ([ee9ce51](https://github.com/ecomplus/apps-manager/commit/ee9ce5166b3f6fd5c9315c52222518d63ae65e19)), closes [#57](https://github.com/ecomplus/apps-manager/issues/57)
+
 ### [0.3.2](https://github.com/ecomclub/apps-manager/compare/v0.3.1...v0.3.2) (2019-12-11)
 
 ### [0.3.1](https://github.com/ecomclub/apps-manager/compare/v0.3.0...v0.3.1) (2019-11-26)
