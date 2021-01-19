@@ -4,14 +4,6 @@
  * @license AGPL-3.0
  */
 
-import ecomAuth from '@ecomplus/auth'
-import listFromMarket from './methods/list-from-market'
-import findOnMarket from './methods/find-on-market'
-import install from './methods/install'
-import remove from './methods/remove'
-import edit from './methods/edit'
-import list from './methods/list'
-import find from './methods/find'
 
 /**
  * JS client for manage E-Com Plus Apps
@@ -31,13 +23,14 @@ import find from './methods/find'
  * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1/dist/ecom-apps.root.min.js"></script>
  */
 
+import ecomAuth from '@ecomplus/auth'
 import EcomApps from './constructor'
 
-const ecomApps = new EcomApps()
+const ecomApps = new EcomApps(ecomAuth)
 
 export default ecomApps
 
-export { ecomApps, EcomApps}
+export { ecomApps, EcomApps }
 
 /**
  * Construct a new apps manager instance object.
