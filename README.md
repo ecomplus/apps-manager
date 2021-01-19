@@ -1,19 +1,14 @@
 # apps-manager
 
-[![CodeFactor](https://www.codefactor.io/repository/github/ecomclub/apps-manager/badge)](https://www.codefactor.io/repository/github/ecomclub/apps-manager)
-[![npm version](https://img.shields.io/npm/v/@ecomplus/apps-manager.svg)](https://www.npmjs.org/@ecomplus/apps-manager)
-[![license mit](https://img.shields.io/badge/License-AGPL-orange.svg)](https://opensource.org/licenses/AGPL-3.0)
+[![Publish](https://github.com/ecomplus/apps-manager/workflows/Publish/badge.svg)](https://github.com/ecomplus/apps-manager/actions?workflow=Publish) [![CodeFactor](https://www.codefactor.io/repository/github/ecomplus/apps-manager/badge)](https://www.codefactor.io/repository/github/ecomplus/apps-manager) [![npm version](https://img.shields.io/npm/v/@ecomplus/apps-manager.svg)](https://www.npmjs.org/@ecomplus/apps-manager) [![License AGPL](https://img.shields.io/badge/License-AGPL-orange.svg)](https://opensource.org/licenses/AGPL-3.0)
 
 JS lib to manage E-Com Plus store applications
 
-[Changelog](https://github.com/ecomclub/apps-manager/blob/master/CHANGELOG.md)
+[Changelog](https://github.com/ecomplus/apps-manager/blob/master/CHANGELOG.md)
 
 ## Usage
 
-The `@ecomplus/apps-manager` package can be used to work with
-[E-Com Plus Market](https://github.com/ecomclub/market) and
-[Store API](https://developers.e-com.plus/docs/api/#/store/applications/) applications,
-with methods for apps search, install, edit and delete.
+The `@ecomplus/apps-manager` package can be used to work with [E-Com Plus Market](https://market.e-com.plus/) and [Store API](https://developers.e-com.plus/docs/api/#/store/applications/) applications, with methods for apps search, install, edit and delete.
 
 It's available for both Node.js and browser environments.
 
@@ -23,53 +18,26 @@ It's available for both Node.js and browser environments.
 ### Example
 
 ```js
-const ecomApps = new EcomApps()
-// Retrieve simple list of apps
-ecomApps.fetchApps()
-  .then(apps => {
-    console.log(apps)
+import ecomAuth from '@ecomplus/auth'
+import ecomApps from '@ecomplus/apps-manager'
+
+ecomApps.listFromMarket()
+  .then(availableApps => {
+    console.log(availableApps)
   })
-  .catch(err => console.log(err))
+  .catch(console.error)
+
+const listStoreApps = () => {
+  ecomApps.list()
+    .then(installedApps => {
+      console.log(installedApps)
+    })
+    .catch(console.error)
+}
+
+if (ecomAuth.checkLogin()) {
+  listStoreApps()
+} else {
+  ecomAuth.on('login', listStoreApps)
+}
 ```
-
-## Development
-
-We're using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/), all commit messages must follow these conventions.
-
-For documentation, we're using [jsdoc](https://jsdoc.app/), all methods should be well documented.
-
-### Contributing
-
-1. Fork the repository (skip if you're already a repo collaborator);
-
-2. Create a new branch with the name of your proposal;
-
-4. Clone the repository:
-```bash
-git clone git@github.com:{user}/app-manager.git
-```
-
-5. Move to folder and install dependencies:
-```bash
-cd app-manager
-npm i
-```
-
-6. Run dev server and use global `EcomApps`
-or edit `test/demo.js` for tests on http://localhost:9304/:
-```bash
-npm run serve
-```
-
-7. Commit changes following
-[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/);
-
-8. Create a new [PR](https://github.com/ecomclub/apps-manager/pulls)
-describing your proposal :)
-
-### Deploy
-
-Take a look on `package.json` scripts:
-
-- `npm run doc` - Update jsdoc/docdash generated documentation;
-- `npm run release` - Generate changelog and new version;
