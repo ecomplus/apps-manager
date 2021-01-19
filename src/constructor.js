@@ -4,7 +4,6 @@
  * @license AGPL-3.0
  */
 
-import { ecomAuth } from '@ecomplus/auth'
 import listFromMarket from './methods/list-from-market'
 import findOnMarket from './methods/find-on-market'
 import install from './methods/install'
@@ -12,7 +11,6 @@ import remove from './methods/remove'
 import edit from './methods/edit'
 import list from './methods/list'
 import find from './methods/find'
-import ecomApps from '.'
 
 /**
  * JS client for manage E-Com Plus Apps
@@ -32,48 +30,28 @@ import ecomApps from '.'
  * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1/dist/ecom-apps.root.min.js"></script>
  */
 
-export default class EcomApps {
-  custructor() {
-    this.ecomAuth = ecomAuth
-  }
+const EcomApps = function(ecomAuth) {
+  const ecomApps = this
 
-  async listFromMarket(meta) {
-    listFromMarket(ecomApps, meta)
-  }
+  ecomApps.ecomAuth = ecomAuth
 
-  async findOnMarket(appId) {
-    findOnMarket(ecomApps, appId)
-  }
+  ecomApps.Constructor = EcomApps
 
-  async install(appId, redirect, body) {
-    install(ecomApps, appId, redirect, body)
-  }
+  this.listFromMarket = meta => listFromMarket(ecomApps, meta)
 
-  async remove(_id) {
-    remove(ecomApps, _id)
-  }
+  this.findOnMarket = appId => findOnMarket(ecomApps, appId)
 
-  async edit(_id, body, canUpdateInternals) {
-    edit(ecomApps, _id, body, canUpdateInternals)
-  }
+  this.install = (appId, redirect, body) => install(ecomApps, appId, redirect, body)
 
-  async list(meta) {
-    list(ecomApps, meta)
-  }
+  this.remove = _id => remove(ecomApps, _id)
 
-  async find(_id) {
-    find(ecomApps, _id)
-  }
+  this.edit = (_id, body, canUpdateInternals) => edit(ecomApps, _id, body, canUpdateInternals)
 
-  async listFromMarket(meta) {
-    return listFromMarket(ecomApps, meta)
-  }
+  this.list = meta => list(ecomApps, meta)
+
+  this.find = _id => find(ecomApps, _id)
+
+  this.listFromMarket = (meta) => listFromMarket(ecomApps, meta)
 }
 
-/**
- * Construct a new apps manager instance object.
- * @class EcomApps
- *
- * @example
- * const ecomApps = new EcomApps()
- */
+export default EcomApps

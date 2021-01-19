@@ -21,7 +21,7 @@ ecomApps.install(1236, true)
  */
 
 export default (self, appId, redirect = false, appBody) => {
-  const { findApp, ecomAuth } = self
+  const { findOnMarket, ecomAuth } = self
   const storeAppProps = [
     'app_id',
     'title',
@@ -73,7 +73,7 @@ export default (self, appId, redirect = false, appBody) => {
   if (appBody && appBody.store_app && appBody.store_app.app_id) {
     return install(appBody)
   } else {
-    return findApp(appId).then(app => install(app))
+    return findOnMarket(appId).then(app => install(app))
   }
 }
 
