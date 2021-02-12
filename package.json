@@ -30,14 +30,14 @@
   },
   "homepage": "https://github.com/ecomplus/apps-manager#readme",
   "dependencies": {
-    "@ecomplus/auth": "^1.0.0-rc.2",
+    "@ecomplus/auth": "^1.0.0",
     "axios": "^0.21.0",
     "core-js": "^3.8.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/preset-env": "^7.12.16",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "babel-loader": "^8.2.2",
