@@ -28,7 +28,6 @@ export default (self, appId, redirect = false, appBody) => {
     'slug',
     'paid',
     'version',
-    'version_date',
     'type',
     'load_events',
     'script_uri',
@@ -49,9 +48,10 @@ export default (self, appId, redirect = false, appBody) => {
 
     body.state = 'active'
     body.status = 'active'
+    body.authentication = Boolean(storeApp.authentication)
     body.admin_settings = storeApp.admin_settings || {}
     body.modules = storeApp.modules || {}
-    body.version_date = new Date(storeApp.version_date).toISOString()
+    body.version_date = new Date().toISOString()
 
     return ecomAuth
       .requestApi('/applications.json', 'post', body)
