@@ -6,9 +6,9 @@
  * [E-Com Plus Store REST API]{@link https://developers.e-com.plus/docs/api/#/store/applications/applications}.
  *
  * @param {number} appId - Market application ID
- * @param {boolean} [redirect=false] - Set to true when you
+ * @param {boolean} [canRedirect=false] - Set to true when you
  * want to automatically redirect user on new window
- * when app returns a `redirect_uri` (usually for oauth flux)
+ * when app returns a `redirect_uri` (usually for OAuth flux)
  * @param {object} [appBody] - Market application body
  * @returns {Promise<{ app, result }|error>}
  *
@@ -20,46 +20,22 @@ ecomApps.install(1236, true)
 
  */
 
-export default (self, appId, redirect = false, appBody) => {
+export default (self, appId, canRedirect, appBody) => {
   const { findOnMarket, ecomAuth } = self
-  const storeAppProps = [
-    'app_id',
-    'title',
-    'slug',
-    'paid',
-    'version',
-    'type',
-    'load_events',
-    'script_uri',
-    'github_repository',
-    'authentication',
-    'auth_callback_uri',
-    'auth_scope'
-  ]
 
   const install = (app) => {
     const storeApp = app.store_app || {}
-    const body = {}
-    storeAppProps.forEach(prop => {
-      if (storeApp[prop]) {
-        body[prop] = storeApp[prop]
-      }
-    })
-
-    body.state = 'active'
-    body.status = 'active'
-    body.authentication = Boolean(storeApp.authentication)
-    body.admin_settings = storeApp.admin_settings || {}
-    body.modules = storeApp.modules || {}
-    body.version_date = new Date().toISOString()
+    storeApp.state = 'active'
+    storeApp.authentication = Boolean(storeApp.authentication)
+    storeApp.version_date = new Date().toISOString()
 
     return ecomAuth
-      .requestApi('/applications.json', 'post', body)
+      .requestApi('/applications.json', 'post', storeApp)
       .then(resp => {
         // redirect to oauth
-        if (redirect && storeApp.redirect_uri) {
+        if (canRedirect && app.redirect_uri) {
           const auth = ecomAuth.getSession()
-          const url = `${storeApp.redirect_uri}?x_store_id=${auth.store_id}`
+          const url = `${app.redirect_uri}?x_store_id=${auth.store_id}`
           createPopup(url, `Authentication ${app.title}`)
         }
 

@@ -30,7 +30,7 @@ import find from './methods/find'
  * <script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1/dist/ecom-apps.root.min.js"></script>
  */
 
-const EcomApps = function(ecomAuth) {
+const EcomApps = function (ecomAuth) {
   const ecomApps = this
 
   ecomApps.ecomAuth = ecomAuth
@@ -41,7 +41,7 @@ const EcomApps = function(ecomAuth) {
 
   this.findOnMarket = appId => findOnMarket(ecomApps, appId)
 
-  this.install = (appId, redirect, body) => install(ecomApps, appId, redirect, body)
+  this.install = (appId, canRedirect, body) => install(ecomApps, appId, canRedirect, body)
 
   this.remove = _id => remove(ecomApps, _id)
 
