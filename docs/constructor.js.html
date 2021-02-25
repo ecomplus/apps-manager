@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>methods/find-on-market.js - Documentation</title>
+    <title>constructor.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">methods/find-on-market.js</h1>
+    <h1 class="page-title">constructor.js</h1>
     
 
     
@@ -42,33 +42,63 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import request from '../lib/market-requests'
-
-/**
- * @method
- * @memberof EcomApps
- * @name findOnMarket
- * @description Fetch specific app from
- * [E-Com Plus Market API](https://github.com/ecomclub/market/blob/master/README.md#api-public-resources).
- *
- * @param {number} appId - Market application ID (`app_id`)
- *
- * @returns {Promise&lt;data|error>}
- *
- * @example
-
-ecomApps.findOnMarket(1236)
-  .then(result => console.log(result))
-  .catch(e => console.log(e))
-
+            <pre class="prettyprint source linenums"><code>/**
+ * https://github.com/ecomplus/apps-manager
+ * @author E-Com Club &lt;ti@e-com.club>
+ * @license AGPL-3.0
  */
 
-export default (self, appId) => {
-  if (!appId || isNaN(appId)) {
-    return Promise.reject(new Error('app_id is invalid'))
-  }
-  return request({ url: `/applications/${appId}` }).then(resp => resp.data)
+import listFromMarket from './methods/list-from-market'
+import findOnMarket from './methods/find-on-market'
+import install from './methods/install'
+import remove from './methods/remove'
+import edit from './methods/edit'
+import list from './methods/list'
+import find from './methods/find'
+
+/**
+ * JS client for manage E-Com Plus Apps
+ * @module @ecomplus/apps-manager
+ * @see EcomApps
+ *
+ * @example
+ * // ES import
+ * import EcomApps from '@ecomplus/apps-manager'
+ *
+ * @example
+ * // With CommonJS
+ * const EcomApps = require('@ecomplus/apps-manager')
+ *
+ * @example
+ * &lt;!-- Global `@ecomplus/apps-manager` from CDN on browser -->
+ * &lt;script src="https://cdn.jsdelivr.net/npm/@ecomplus/apps-manager@0.1/dist/ecom-apps.root.min.js">&lt;/script>
+ */
+
+const EcomApps = function (ecomAuth) {
+  const ecomApps = this
+
+  ecomApps.ecomAuth = ecomAuth
+
+  ecomApps.Constructor = EcomApps
+
+  this.listFromMarket = meta => listFromMarket(ecomApps, meta)
+
+  this.findOnMarket = appId => findOnMarket(ecomApps, appId)
+
+  this.install = (appId, canRedirect, body) => install(ecomApps, appId, canRedirect, body)
+
+  this.remove = _id => remove(ecomApps, _id)
+
+  this.edit = (_id, body, canUpdateInternals) => edit(ecomApps, _id, body, canUpdateInternals)
+
+  this.list = meta => list(ecomApps, meta)
+
+  this.find = _id => find(ecomApps, _id)
+
+  this.listFromMarket = (meta) => listFromMarket(ecomApps, meta)
 }
+
+export default EcomApps
 </code></pre>
         </article>
     </section>
