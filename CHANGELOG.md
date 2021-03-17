@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-rc.4](https://github.com/ecomplus/apps-manager/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2021-03-17)
+
+
+### Bug Fixes
+
+* **edit:** check object keys to send data update requests ([6226139](https://github.com/ecomplus/apps-manager/commit/62261390564cdbcf8776e54e6aaed2e15c3c39db))
+
 ## [1.0.0-rc.3](https://github.com/ecomplus/apps-manager/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2021-02-25)
 
 

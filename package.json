@@ -1,6 +1,6 @@
 {
   "name": "@ecomplus/apps-manager",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0-rc.4",
   "description": "JS lib to manage E-Com Plus store applications",
   "main": "dist/ecom-apps.min.js",
   "module": "src/index.js",
