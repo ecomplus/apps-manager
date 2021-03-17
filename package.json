@@ -46,7 +46,7 @@
     "jsdoc": "^3.6.6",
     "standard": "^16.0.3",
     "standard-version": "^8.0.2",
-    "webpack": "^4.46.0",
+    "webpack": "^5.26.3",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2"
   },
