@@ -37,23 +37,7 @@ export default (self, _id, body, canUpdateInternals = false) => {
   const promises = []
   const { ecomAuth } = self
 
-  let data = null
-  let hiddenData = null
-  const editAppBody = {}
-  for (const key in body) {
-    switch (key) {
-      case 'data':
-        data = body[key]
-        break
-      case 'hidden_data':
-        hiddenData = body[key]
-        break
-      default:
-        editAppBody[key] = body[key]
-    }
-  }
-
-  const updateAppData = (subresource = 'data', body = data) => {
+  const updateAppData = (subresource, body) => {
     if (body && typeof body === 'object' && Object.keys(body).length) {
       if (!canUpdateInternals) {
         body = removeInternals(body)
@@ -61,9 +45,18 @@ export default (self, _id, body, canUpdateInternals = false) => {
       promises.push(ecomAuth.requestApi(`/applications/${_id}/${subresource}.json`, method, body))
     }
   }
-  updateAppData()
-  updateAppData('hidden_data', hiddenData)
 
+  const editAppBody = {}
+  for (const key in body) {
+    switch (key) {
+      case 'data':
+      case 'hidden_data':
+        updateAppData(key, body[key])
+        break
+      default:
+        editAppBody[key] = body[key]
+    }
+  }
   if (Object.keys(editAppBody).length) {
     promises.push(ecomAuth.requestApi(`/applications/${_id}.json`, method, editAppBody))
   }
