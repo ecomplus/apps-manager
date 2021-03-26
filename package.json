@@ -1,6 +1,6 @@
 {
   "name": "@ecomplus/apps-manager",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0",
   "description": "JS lib to manage E-Com Plus store applications",
   "main": "dist/ecom-apps.min.js",
   "module": "src/index.js",
@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production webpack",
     "serve": "webpack-dev-server",
     "doc": "rm -rf ./docs/*; jsdoc ./src -r ./README.md -d ./docs -t ./node_modules/docdash",
-    "release": "rm -rf ./dist; npm run build && standard-version --prerelease rc"
+    "release": "rm -rf ./dist; npm run build && standard-version"
   },
   "repository": {
     "type": "git",
