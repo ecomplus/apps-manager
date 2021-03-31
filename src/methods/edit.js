@@ -38,11 +38,13 @@ export default (self, _id, body, canUpdateInternals = false) => {
   const { ecomAuth } = self
 
   const updateAppData = (subresource, data) => {
-    if (data && typeof data === 'object' && Object.keys(data).length) {
+    if (data && typeof data === 'object') {
       if (!canUpdateInternals) {
         data = removeInternals(data)
       }
-      promises.push(ecomAuth.requestApi(`/applications/${_id}/${subresource}.json`, method, data))
+      if (Object.keys(data).length) {
+        promises.push(ecomAuth.requestApi(`/applications/${_id}/${subresource}.json`, method, data))
+      }
     }
   }
 
