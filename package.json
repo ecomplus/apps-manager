@@ -32,14 +32,14 @@
   "dependencies": {
     "@ecomplus/auth": "^1.0.1",
     "axios": "^0.27.2",
-    "core-js": "^3.23.2"
+    "core-js": "^3.23.3"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "@babel/plugin-transform-runtime": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
-    "@commitlint/cli": "^17.0.2",
-    "@commitlint/config-conventional": "^17.0.2",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "babel-loader": "^8.2.5",
     "docdash": "^1.2.0",
     "husky": "^4.3.8",
